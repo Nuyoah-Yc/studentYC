@@ -1,0 +1,78 @@
+{% load static %}
+<script src="{% static 'libs/jquery-1.12.4.min.js' %}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'libs/tables/tables.js' %}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'libs/models/models.js' %}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'libs/form/form.js' %}" type="text/javascript" charset="utf-8"></script>
+<script src="{% static 'js/sys.js' %}" type="text/javascript" charset="utf-8"></script>
+<div class="updSessionInfoWin fater-model-win fater-model-hidden">
+    <div class="fater-model-win-head">
+        <span>个人信息修改</span>
+        <span>×</span>
+    </div>
+    <div class="fater-model-win-body">
+        <form name="updSessionInfoForm" class="fater-form">
+            <div class="fater-form-item">
+                <label>系统账号</label>
+                <input type="text" name="userName" placeholder="请输入用户账号"/>
+            </div>
+            <div class="fater-form-item">
+                <label>用户姓名</label>
+                <input type="text" name="name" placeholder="请输入学生姓名"/>
+            </div>
+            <div class="fater-form-item">
+                <label>用户年龄</label>
+                <input type="text" name="age" placeholder="请输入学生年龄"/>
+            </div>
+            <div class="fater-form-item">
+                <label>用户性别</label>
+                <input type="radio" name="gender" value="男"/> 男
+                <input type="radio" name="gender" value="女"/> 女
+            </div>
+            <div class="fater-form-item">
+                <label>联系电话</label>
+                <input type="text" name="phone" placeholder="请输入联系电话"/>
+            </div>
+            <input type="hidden" name="id"/>
+            <div class="fater-form-btns">
+                <button type="button" id="updSessionInfoFormBtn" class="fater-btn fater-btn-primary">
+                    提交
+                </button>
+                <button type="reset" class="fater-btn fater-btn-normal">
+                    取消
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="updSessionPwdWin fater-model-win fater-model-hidden">
+    <div class="fater-model-win-head">
+        <span>用户密码修改</span>
+        <span>×</span>
+    </div>
+    <div class="fater-model-win-body">
+        <form name="updSessionPwdForm" class="fater-form">
+            <div class="fater-form-item">
+                <label>原始密码</label>
+                <input type="password" name="oldPwd" placeholder="请输入原始密码"/>
+            </div>
+            <div class="fater-form-item">
+                <label>修改密码</label>
+                <input type="password" name="newPwd" placeholder="请输入修改密码"/>
+            </div>
+            <div class="fater-form-item">
+                <label>确认密码</label>
+                <input type="password" name="repPwd" placeholder="请输入确认密码"/>
+            </div>
+            <input type="hidden" name="passWord"/>
+            <input type="hidden" name="id"/>
+            <div class="fater-form-btns">
+                <button type="button" id="updSessionPwdFormBtn" class="fater-btn fater-btn-primary">
+                    提交
+                </button>
+                <button type="reset" class="fater-btn fater-btn-normal">
+                    取消
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

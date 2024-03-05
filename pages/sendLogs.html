@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+{% include 'templates/head.html' %}
+<body>
+<div class="fater-layout-header">
+    {% include 'templates/nav.html' %}
+</div>
+
+<div class="fater-layout-menus">
+    {% include 'templates/menus.html' %}
+</div>
+
+<div class="fater-layout-body">
+    <div class="fater-panel">
+        <div class="fater-pannel-title">
+            数据查询
+        </div>
+        <div class="fater-pannel-body">
+            <div class="fater-form-inline">
+                <input type="text" name="para1" placeholder="请输入岗位名称……"/>
+            </div>
+            {% if request.session.type != 2 %}
+            <div class="fater-form-inline">
+                <input type="text" name="para2" placeholder="请输入学生姓名……"/>
+            </div>
+            {% endif %}
+            <div class="fater-form-inline">
+                <button type="button" class="fater-btn fater-btn-form-qry">
+                    <span class="fa fa-search"></span>
+                </button>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="fater-panel">
+        <div class="fater-pannel-body">
+            <div id="tableShow"></div>
+        </div>
+    </div>
+</div>
+
+<div class="fater-layout-foot">
+    {% include 'templates/foot.html' %}
+</div>
+
+{% include 'templates/commjs.html' %}
+<script src="{% static 'js/sendLogs.js' %}" type="text/javascript"></script>
+</body>
+</html>

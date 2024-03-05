@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+{% include 'templates/head.html' %}
+<body>
+<div class="fater-layout-header">
+    {% include 'templates/nav.html' %}
+</div>
+
+<div class="fater-layout-menus">
+    {% include 'templates/menus.html' %}
+</div>
+
+<div class="fater-layout-body">
+
+    <div class="fater-nums">
+        <div class="fater-num-panel">
+            <div class="fater-num-title">优质企业</div>
+            <div id="cTotal" class="fater-num-toatal"></div>
+            <div class="fater-num-unit">家</div>
+        </div>
+        <div class="fater-num-panel">
+            <div class="fater-num-title">优质岗位</div>
+            <div id="jTotal" class="fater-num-toatal"></div>
+            <div class="fater-num-unit">个</div>
+        </div>
+        <div class="fater-num-panel">
+            <div class="fater-num-title">就业人数</div>
+            <div id="isTotal" class="fater-num-toatal"></div>
+            <div class="fater-num-unit">位</div>
+        </div>
+        <div class="fater-num-panel" style="margin-right: 0px;">
+            <div class="fater-num-title">待业人数</div>
+            <div id="osTotal" class="fater-num-toatal"></div>
+            <div class="fater-num-unit">位</div>
+        </div>
+    </div>
+
+    <div class="fater-panel">
+        <div class="fater-pannel-title">
+            课表信息
+        </div>
+        <div class="fater-pannel-body">
+            <table class="fater-table">
+
+
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="fater-layout-foot">
+    {% include 'templates/foot.html' %}
+</div>
+
+{% include 'templates/commjs.html' %}
+<script type="text/javascript">
+$(function(){
+
+    $.ajax({
+        url: "/jobs/sysNum/",
+        type: "GET",
+        async: false,
+        success: function(res){
+            if(res.code == 0){
+
+                $('#cTotal').text(res.data.companiesTotal);
+                $('#jTotal').text(res.data.jobTotal);
+                $('#isTotal').text(res.data.inStuTotal);
+                $('#osTotal').text(res.data.outStuTotal);
+            }else{
+                $.msg("error", res.msg);
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

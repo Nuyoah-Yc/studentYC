@@ -1,0 +1,135 @@
+/* 窗口样式 */
+.fater-model-hidden{
+	display: none;
+}
+.fater-model-win{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: #FFFFFF;
+	z-index: 1001;
+}
+.fater-model-win-head{
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #E4E7ED;
+}
+.fater-model-win-head span:first-child{
+	position: absolute;
+	font-size: 16px;
+	left: 10px;
+}
+.fater-model-win-head span:last-child{
+	position: absolute;
+	font-size: 20px;
+	right: 10px;
+	cursor: pointer;
+}
+.fater-model-win-body{
+	padding: 15px;
+}
+
+/* 响应消息 */
+.fater-model-msg{
+	position: fixed;
+	top: 40%;
+	left: 50%;
+	min-width: 150px;
+	width: max-content;
+	padding: 10px 15px;
+	border-radius: 5px;
+	z-index: 1001;
+}
+.fater-model-msg-success{
+	background-color: #cdf9b8;
+	color: #67C23A;
+}
+.fater-model-msg-success .fa{
+	color: #67C23A;
+}
+.fater-model-msg-warning{
+	background-color: #ffeccf;
+	color: #E6A23C;
+}
+.fater-model-msg-warning .fa{
+	color: #E6A23C;
+}
+.fater-model-msg-error{
+	background-color: #fde6e6;
+	color: #F56C6C;
+}
+.fater-model-msg-error .fa{
+	color: #F56C6C;
+}
+.fater-model-msg-info{
+	background-color: #F2F6FC;
+	color: #606266;
+}
+.fater-model-msg-info .fa{
+	color: #606266;
+}
+
+/* 网页弹框 */
+.fater-model-alert{
+	position: fixed;
+	top: 40%;
+	left: 40%;
+	width: 280px;
+	height: 150px;
+	background-color: #FFFFFF;
+	z-index: 1001;
+	box-shadow: 2px 2px 12px 12px rgb(0 0 0 / 10%);
+}
+.fater-model-alert-head{
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #E4E7ED;
+}
+.fater-model-alert-head span:first-child{
+	position: absolute;
+	font-size: 16px;
+	left: 10px;
+}
+.fater-model-alert-head span:last-child{
+	position: absolute;
+	font-size: 20px;
+	right: 10px;
+	cursor: pointer;
+}
+.fater-model-alert-body{
+	position: relative;
+	height: 140px;
+	width: 100%;
+}
+.fater-model-alert-msg{
+	position: absolute;
+	left: 20px;
+	top: 20px;
+}
+.fater-model-alert-btns{
+	position: absolute;
+	right: 20px;
+	bottom: 45px;
+}
+.fater-model-alert-ok{
+	background-color: #409EFF;
+    color: #FFFFFF;
+    padding: 5px 5px;
+    font-size: 8px;
+    user-select: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.fater-model-alert-cancel{
+	color: #333333;
+	background-color: #FFFFFF;
+    padding: 5px 5px;
+    font-size: 8px;
+    user-select: none;
+    border: 1px solid #CCCCCC;
+    cursor: pointer;
+}

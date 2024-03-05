@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录页面</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'libs/models/models.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/comm.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"/>
+</head>
+<body>
+<div class="login-container">
+    <div class="login-body">
+        <div class="login-form">
+            <div class="login-form-title">
+                就业管理系统登陆
+            </div>
+            <div class="login-form-body">
+                <form name="loginForm" action="" class="fater-form">
+                    <div class="fater-form-block">
+                        <input type="text" name="userName" placeholder="请输入教务管理系统账号"/>
+                    </div>
+                    <div class="fater-form-block">
+                        <input type="password" name="passWord" placeholder="请输入教务管理系统密码"/>
+                    </div>
+                    <div class="fater-form-block">
+                        <button type="button" id="loginFormBtn" class="fater-btn fater-btn-primary fater-btn-block">
+                            登录
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% include 'templates/commjs.html' %}
+<script src="{% static 'js/login.js' %}" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

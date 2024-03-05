@@ -1,0 +1,401 @@
+/* 系统通用样式 */
+*{
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+}
+*:focus {
+	outline: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	height: 100%;
+	background-color: #EEEEEE;
+}
+.clear{
+	clear: both;
+}
+.fater-hide{
+	display: none;
+}
+.fater-btn-form-qry .fa{
+	color: #FFFFFF;
+}
+.fater-form-btns{
+	margin-left: 35px;
+}
+
+/* 系统布局样式 */
+.fater-layout-header{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 200px;
+	height: 60px;
+	line-height: 60px;
+	border-bottom: 1px solid #eee;
+	z-index: 1000;
+	background-color: #FFFFFF;
+}
+.fater-layout-menus{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 200px;
+	background-color: #333333;
+}
+.fater-layout-body{
+	position: absolute;
+	top: 60px;
+	right: 0;
+	left: 200px;
+	background-color: #EEEEEE;
+	padding: 15px;
+	z-index: 999;
+	padding-bottom: 40px;
+	min-height: 500px;
+}
+.fater-layout-foot{
+	position: fixed;
+	right: 0;
+	left: 200px;
+	bottom: 0;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	z-index: 999;
+	border-top: 1px solid #EEEEEE;
+}
+.fater-layout-foot a{
+	color: #909399;
+}
+.fater-logo{
+	height: 60px;
+	width: 200px;
+	line-height: 60px;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-align: center;
+	border-bottom: 1px solid #44484e;
+}
+.fater-user{
+	position: absolute;
+	top: 0;
+	right: 15px;
+	bottom: 0;
+	width: 100px;
+	color: #909399;
+	cursor: pointer;
+}
+.fater-user-list{
+	width: 100px;
+	height: 0px;
+	background-color: #FFFFFF;
+	border: 1px solid #eee;
+	overflow: hidden;
+}
+.fater-user-list span{
+	display: block;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+}
+.fater-user-show{
+	height: 85px;
+	transition:height 0.2s;
+	-moz-transition:height 0.2s; /* Firefox 4 */
+	-webkit-transition:height 0.2s; /* Safari and Chrome */
+	-o-transition:height 0.2s; /* Opera */
+}
+.fater-menu-vertical{
+}
+.fater-menu-vertical *{
+	color: #FFFFFF;
+}
+.fater-menu-vertical span{
+	margin-right: 8px;
+}
+.fater-menu-item{
+	height: 45px;
+	line-height: 45px;
+	font-size: 16px;
+	padding-left: 15px;
+	cursor: pointer;
+}
+.fater-menu-item:hover{
+	background-color: #626060;
+}
+
+/* 引用条样式 */
+.fater-blockquote{
+	height: 45px;
+	line-height: 45px;
+	background-color: #FFFFFF;
+	border-left: 5px solid #409EFF;
+	padding-left: 15px;
+	margin-bottom: 15px;
+}
+
+/* 系统面板 */
+.fater-panel{
+	background-color: #FFFFFF;
+	margin-bottom: 15px;
+}
+.fater-pannel-title{
+	padding: 10px 15px;
+	border-bottom: 1px solid #E4E7ED;
+}
+.fater-pannel-body{
+	font-size: 12px;
+	padding: 15px;
+}
+
+/* 系统表格样式 */
+.fater-table{
+	width: 100%;
+	border-left: 1px solid #E4E7ED;
+	border-bottom: 1px solid #E4E7ED;
+}
+.fater-table tr{
+	height: 35px;
+}
+.fater-table-center td{
+	text-align: center;
+}
+.fater-table td{
+	padding-left: 10px;
+	border-right: 1px solid #E4E7ED;
+	border-top: 1px solid #E4E7ED;
+}
+.fater-table th{
+	padding-left: 10px;
+	border-right: 1px solid #E4E7ED;
+	border-top: 1px solid #E4E7ED;
+}
+
+
+/* 页面按钮样式 */
+.fater-btn{
+	padding: 10px 15px;
+	user-select: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+.fater-btn-block {
+	display: block;
+	width: 100%;
+	margin-bottom: 25px;
+	padding: 10px 15px;
+}
+.fater-btn-sm {
+	padding: 5px 5px;
+	font-size: 8px;
+}
+.fater-btn-primary{
+	background-color: #409EFF;
+	color: #FFFFFF;
+}
+.fater-btn-normal{
+	color: #333333;
+	background-color: #FFFFFF;
+	border-color: #CCCCCC;
+}
+.fater-btn-danger{
+	background-color: #F56C6C;
+	color: #FFFFFF;
+}
+.fater-btn-disableed{
+	color: #948f8f;
+	background-color: #FFFFFF;
+	border-color: #CCCCCC;
+	cursor: not-allowed;
+}
+.fater-btn-primary-text{
+	background-color: transparent;
+	color: #409EFF;
+}
+.fater-btn-normal-text{
+	background-color: transparent;
+	color: #303133;
+	border: 1px solid transparent;
+}
+.fater-btn-danger-text{
+	background-color: transparent;
+	color: #F56C6C;
+}
+.fater-btn-disableed-text{
+	color: #948f8f;
+	background-color: transparent;
+	border: 1px solid transparent;
+	cursor: not-allowed;
+}
+
+/* 文本样式 */
+.fater-text-primary{
+	color: #409EFF;
+}
+.fater-text-normal{
+	color: #303133;
+}
+.fater-text-danger{
+	color: #F56C6C;
+}
+.fater-text-info{
+	color: #67C23A;
+}
+
+/* 分页条样式 */
+.fater-page{
+	margin-top: 25px;
+	width: max-content;
+	border-left: 1px solid #E4E7ED;
+	border-top: 1px solid #E4E7ED;
+}
+.fater-page span{
+	cursor: pointer;
+	display: inline-block;
+	width:30px;
+	height: 30px;
+	color: #409EFF;
+	line-height: 30px;
+	text-align: center;
+	border-bottom: 1px solid #E4E7ED;
+	border-right: 1px solid #E4E7ED;
+}
+.fater-page span.curr{
+	color: #606266;
+}
+
+/* 表单样式 */
+.fater-form-item {
+	margin-bottom: 25px;
+	width: 100%;
+}
+.fater-form-item label{
+	color: #696363;
+	width: 90px;
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+	margin-right: 20px;
+	text-align: right;
+}
+.fater-form-item input[type='text'] {
+	border: 1px solid #CCCCCC;
+	padding: 5px 10px;
+	width: 85%;
+	height: 25px;
+}
+.fater-form-item input[type='password'] {
+	border: 1px solid #CCCCCC;
+	padding: 5px 10px;
+	width: 85%;
+	height: 25px;
+}
+.fater-form-item input[type='radio'] {
+	margin-left: 15px;
+}
+.fater-form-item input[type='checkbox'] {
+	margin-left: 15px;
+}
+.fater-form-item select {
+	border: 1px solid #CCCCCC;
+	padding: 5px 10px;
+	width: 85%;
+	height: 36px;
+}
+.fater-form-item textarea {
+	border: 1px solid #CCCCCC;
+	padding: 5px 10px;
+	width: 85%;
+	height: 60px;
+}
+.fater-form-block input[type='text'] {
+	border: 1px solid #CCCCCC;
+	padding: 5px 10px;
+	height: 25px;
+	width: 98%;
+	margin-bottom: 25px;
+}
+.fater-form-block input[type='password'] {
+	border: 1px solid #CCCCCC;
+	padding: 5px 10px;
+	height: 25px;
+	width: 98%;
+	margin-bottom: 25px;
+}
+.fater-form-block input[type='password'] {
+	border: 1px solid #CCCCCC;
+	padding: 5px 10px;
+	height: 25px;
+	width: 98%;
+	margin-bottom: 25px;
+}
+.fater-form-inline input[type='text'] {
+	border: 1px solid #CCCCCC;
+	padding: 5px 10px;
+	width: 85%;
+	height: 25px;
+	width: 200px;
+	margin-right: 15px;
+	float: left;
+}
+.fater-form-inline select {
+	border: 1px solid #CCCCCC;
+	padding: 5px 10px;
+	width: 200px;
+	height: 36px;
+	margin-right: 15px;
+	float: left;
+}
+.fater-btn-form-qry{
+	height: 36px;
+	float: left;
+	background-color: #409EFF;
+}
+
+.fater-nums{
+    height: 175px;
+    overflow:hidden;
+}
+
+
+.fater-num-panel{
+    position: relative;
+    height: 130px;
+    background-color: #fff;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    padding: 15px;
+    width: 22.1%;
+    float: left;
+}
+.fater-num-toatal{
+    position:  absolute;
+    top: 15px;
+    left: 30px;
+    color: #409EFF;
+    font-size: 75px;
+    font-weight: bold;
+}
+.fater-num-title{
+    position:  absolute;
+    bottom: 15px;
+    font-size: 16px;
+    color: #909399;
+}
+.fater-num-unit{
+    position:  absolute;
+    bottom: 15px;
+    right: 25px;
+    font-size: 45px;
+    color: #C0C4CC;
+}

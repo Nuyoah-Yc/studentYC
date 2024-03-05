@@ -1,0 +1,119 @@
+<div class="fater-logo">
+    学生就业管理系统
+</div>
+<input id="sessionUserType" type="hidden" value="{{ request.session.type }}">
+{% if request.session.type == 0 %}
+<div class="fater-menu-vertical">
+    <div class="fater-menu-item">
+        <a href="/jobs/show/">
+            <span class="fa fa-home"></span> 系统首页
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/colleges/show/">
+            <span class="fa fa-building"></span> 学院信息管理
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/majors/show/">
+            <span class="fa fa-deaf"></span> 专业信息管理
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/companies/show/">
+            <span class="fa fa-cc"></span> 企业信息管理
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/jobs/show/">
+            <span class="fa fa-diamond"></span> 岗位信息管理
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/users/show/">
+            <span class="fa fa-user-o"></span> 管理员信息管理
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/students/show/">
+            <span class="fa fa-users"></span> 学生信息管理
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/educationLogs/show/">
+            <span class="fa fa-mortar-board"></span> 学生教育经历
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/projectLogs/show/">
+            <span class="fa fa-newspaper-o"></span> 学生项目经历
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/sendLogs/show/">
+            <span class="fa fa-paper-plane"></span> 学生投递记录
+        </a>
+    </div>
+</div>
+{% elif  request.session.type == 1 %}
+<div class="fater-menu-vertical">
+    <div class="fater-menu-item">
+        <a href="/jobs/show/">
+            <span class="fa fa-home"></span> 系统首页
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/jobs/show/">
+            <span class="fa fa-diamond"></span> 岗位信息管理
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/students/show/">
+            <span class="fa fa-users"></span> 学生信息管理
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/educationLogs/show/">
+            <span class="fa fa-mortar-board"></span> 学生教育经历
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/projectLogs/show/">
+            <span class="fa fa-newspaper-o"></span> 学生项目经历
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/sendLogs/show/">
+            <span class="fa fa-paper-plane"></span> 学生投递记录
+        </a>
+    </div>
+</div>
+{% elif  request.session.type == 2 %}
+<div class="fater-menu-vertical">
+    <div class="fater-menu-item">
+        <a href="/jobs/show/">
+            <span class="fa fa-home"></span> 系统首页
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/jobs/show/">
+            <span class="fa fa-diamond"></span> 岗位信息浏览
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/educationLogs/show/">
+            <span class="fa fa-mortar-board"></span> 教育经历设置
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/projectLogs/show/">
+            <span class="fa fa-newspaper-o"></span> 项目经历设置
+        </a>
+    </div>
+    <div class="fater-menu-item">
+        <a href="/jobs/sendLogs/show/">
+            <span class="fa fa-paper-plane"></span> 投递记录查看
+        </a>
+    </div>
+</div>
+{% endif %}

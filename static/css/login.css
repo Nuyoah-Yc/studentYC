@@ -1,0 +1,85 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+*:focus {
+	outline: none;
+}
+html, body,
+.login-container {
+	/*background-image: url(../imgs/login.jpg);*/
+	/*将图片改成背景颜色*/
+	background-color: #7a9ff3;
+
+    background-size: cover;
+	height: 100%;
+}
+
+.login-body {
+	position: absolute;
+	top: 48%;
+	left: 48%;
+	transform: translate(-50%, -50%);
+	width: 850px;
+	height: 500px;
+	padding: 15px;
+	border-radius: 5px;
+	background-color: #eee;
+	/*background-image: url(../imgs/form1.jpg);*/
+	/*将图片改成背景颜色*/
+	background-color: #cbdaf9;
+
+    background-size: cover;
+}
+
+.login-form{
+    position: absolute;
+    right: 50px;
+    top: 100px;
+}
+
+.login-form-title{
+    text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	color: #409EFF;
+	margin-top: 15px;
+	margin-bottom: 45px;
+}
+
+.fater-form-block input[type='text'] {
+	border: 1px solid #CCCCCC;
+	padding: 5px 10px;
+	height: 25px;
+	width: 350px;
+	margin-bottom: 40px;
+}
+.fater-form-block input[type='password'] {
+	border: 1px solid #CCCCCC;
+	padding: 5px 10px;
+	height: 25px;
+	width: 350px;
+	margin-bottom: 40px;
+}
+
+.fater-btn{
+	padding: 10px 15px;
+	user-select: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+.fater-btn-block {
+	display: block;
+	width: 100%;
+	margin-top: 45px;
+	padding: 10px 15px;
+}
+.fater-btn-primary{
+	background-color: #409EFF;
+	color: #FFFFFF;
+}
+.fater-btn-normal{
+	color: #333333;
+	background-color: #FFFFFF;
+	border-color: #CCCCCC;
+}
