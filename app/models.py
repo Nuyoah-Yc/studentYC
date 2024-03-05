@@ -79,4 +79,4 @@ class SendLogs(models.Model):
     job = models.ForeignKey(Jobs, on_delete=models.CASCADE, db_column='job_id')
     student = models.ForeignKey(Students, on_delete=models.CASCADE, db_column='student_id')
     class Meta:
-        db_table = 'send_logs'
+        db_table = 'send_logs'  #
