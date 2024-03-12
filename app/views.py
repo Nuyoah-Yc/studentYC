@@ -121,95 +121,23 @@ class SysView(BaseView):
 
 
     def jwxt_login(request):
-        session = requests.session()
         userName = request.POST.get('userName')
         passWord = request.POST.get('passWord')
+        url = 'https://api.cyymzy.com/items/login'
+        rsp = requests.post(url, data={'username': userName, 'password': passWord})
+        resl = rsp.json()
+        print(resl)
+        if resl['message'] == '登录成功':
 
-        user = models.Users.objects.filter(userName=userName)  # 查询用户是否存在
-        if (user.exists()):  # 用户存在
-            user = user.first()
-            if user.passWord == passWord:
-                request.session["user"] = user.id
-                request.session["type"] = user.type
-                return SysView.success()
-            else:
-                return SysView.warn('用户密码输入错误')
+            if resl['type'] == '学生':
+                print('学生')
+                return SysView.success(resl['message'])
+            elif resl['type'] == '教师':
+                print('教师')
+                return SysView.success(resl['message'])
         else:
-            def get_verify_code():
-                url = 'http://61.186.94.104:8090/verifycode.servlet'
-                rsp = session.get(url)
-                img_base64 = base64.b64encode(rsp.content).decode()
-                yzm_url = 'http://1.12.73.153:6688/api.Common_VerificationCode'
-                yzm = requests.post(url=yzm_url, json={"ImageBase64": img_base64})
-                return yzm.json()['result']
+            return SysView.warn(resl['message'])
 
-            def get_encoded_data(userAccount, userPassword, scode, sxh):
-                code = userAccount + "%%%" + userPassword
-                encoded = ""
-                for i in range(len(code)):
-                    if i < 20:
-                        encoded = encoded + code[i] + scode[0:int(sxh[i])]
-                        scode = scode[int(sxh[i]):]
-                    else:
-                        encoded = encoded + code[i:]
-                        break
-                return encoded
-
-            # 获取验证码
-            RANDOMCODE = get_verify_code()
-
-            # 获取scode和sxh
-            strUrl = 'http://61.186.94.104:8090/Logon.do?method=logon&flag=sess'
-            response = session.get(strUrl)
-            scode, sxh = response.text.split('#')
-
-            # 生成encoded数据
-            encoded = get_encoded_data(userName, passWord, scode, sxh)
-
-            # 构建登录请求的数据
-            data = {
-                'userAccount': userName,
-                'RANDOMCODE': RANDOMCODE,
-                'encoded': encoded
-            }
-
-            # 发送登录请求
-            login_url = 'http://61.186.94.104:8090/Logon.do?method=logon'
-            rsp = session.post(url=login_url, data=data)
-            msg = re.findall('该帐号不存在或密码错误', rsp.text)
-            if len(msg) == 0:
-                name = re.findall('<p style="font-weight: 500;">(.*?)</p>', rsp.text)[0]
-                type = re.findall('<span style="font-size: 12px;color:#888888">(.*?)</span>', rsp.text)[0]
-                if type == '学生':
-                    type = 2
-                    models.Users.objects.create(
-                        userName=userName,  # 学号
-                        passWord=passWord,  # 密码
-                        name=name,  # 姓名
-                        type=type,  # 用户类型
-                        age=0,
-                        phone=0,
-                        gender='未知'
-                    )
-                    request.session["user"] = userName
-                    request.session["type"] = type
-                    return SysView.success()
-                elif type == '教师':
-                    type = 0
-                    models.Users.objects.create(
-                        userName=userName,  # 学号
-                        passWord=passWord,  # 密码
-                        name=name,  # 姓名
-                        type=type,  # 用户类型
-                        age=0,
-                        phone=0,
-                        gender='未知'
-                    )
-                    request.session["user"] = userName
-                    request.session["type"] = type
-                    return SysView.success()
-            else:
-                return SysView.warn('该帐号不存在或密码错误')
         
 
 

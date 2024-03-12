@@ -48,9 +48,9 @@ class Students(models.Model):
     address = models.CharField('学生籍贯', max_length=64, null=False)
     birthday = models.CharField('出生日期', max_length=10, null=False)
     status = models.IntegerField('学生状态', null=False)
-    user = models.ForeignKey(Users, on_delete=models.CASCADE, db_column='user_id')
-    college = models.ForeignKey(Colleges, on_delete=models.CASCADE, db_column='college_id')
-    major = models.ForeignKey(Majors, on_delete=models.CASCADE, db_column='major_id')
+    user = models.ForeignKey(Users, on_delete=models.CASCADE, db_column='user_id')  # 外键关联用户表
+    college = models.ForeignKey(Colleges, on_delete=models.CASCADE, db_column='college_id') # 外键关联Colleges表
+    major = models.ForeignKey(Majors, on_delete=models.CASCADE, db_column='major_id') # 外键关联Majors表
     class Meta:
         db_table = 'students'
 
