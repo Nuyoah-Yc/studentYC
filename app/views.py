@@ -122,6 +122,13 @@ class SysView(BaseView):
     def jwxt_login(request):
         userName = request.POST.get('userName')
         passWord = request.POST.get('passWord')
+        qygly = models.Users.objects.filter(userName=userName)
+        if (qygly.exists()):
+            user = qygly.first()
+            if user.passWord == passWord:
+                request.session["user"] = user.id
+                request.session['type'] = user.type
+                return SysView.success()
         url = 'https://api.cyymzy.com/items/login'
         rsp = requests.post(url, data={'username': userName, 'password': passWord})
         resl = rsp.json()
@@ -181,7 +188,6 @@ class SysView(BaseView):
     #
     #     user = models.Users.objects.filter(userName=userName)  # 查询用户是否存在
     #     if (user.exists()):  # 用户存在
-    #
     #         user = user.first()
     #         if user.passWord == passWord:
     #             request.session["user"] = user.id
