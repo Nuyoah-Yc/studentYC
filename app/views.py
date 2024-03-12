@@ -2,7 +2,7 @@ import base64
 import json
 import re
 import time
-
+from django.db import IntegrityError
 import requests
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -119,30 +119,63 @@ class SysView(BaseView):
         if module == 'pwd':
             return SysView.updSessionPwd(request)
 
-
     def jwxt_login(request):
         userName = request.POST.get('userName')
         passWord = request.POST.get('passWord')
         url = 'https://api.cyymzy.com/items/login'
         rsp = requests.post(url, data={'username': userName, 'password': passWord})
         resl = rsp.json()
-        print(resl)
         if resl['message'] == '登录成功':
+            gender = resl['gender']
+            age = 18  # 你可以在这里指定年龄
+            phone = resl['phone'] if resl['type'] == '教师' else '88888888'
+            user_type = 0 if resl['type'] == '教师' else 2
 
-            if resl['type'] == '学生':
-                print('学生')
-                return SysView.success(resl['message'])
-            elif resl['type'] == '教师':
-                print('教师')
-                return SysView.success(resl['message'])
+            user_instance = models.Users.objects.create(
+                userName=userName,
+                passWord=passWord,
+                name=resl['name'],
+                gender=gender,
+                age=age,
+                phone=phone,
+                type=user_type
+            )
+
+            request.session['user'] = user_instance.id
+            request.session['type'] = user_instance.type
+
+            if user_type == 2:  # 学生
+                college = models.Colleges.objects.get(name=resl['college'])  # 确保数据库中有这个学院
+                major = models.Majors.objects.get(name=resl['major'])  # 确保数据库中有这个专业
+
+                student, created = models.Students.objects.get_or_create(
+                    id=resl['id'],
+                    defaults={
+                        'user': user_instance,
+                        'address': '无',  # 或从 resl 中提取，如果API有返回
+                        'birthday': '无',  # 或从 resl 中提取，如果API有返回
+                        'status': 0,  # 需要根据实际逻辑提供正确的状态值
+                        'college': college,
+                        'major': major,
+                        # 根据需要添加其他字段的默认值
+                    }
+                )
+
+                if not created:
+                    # 如果学生记录已经存在，则根据需要更新它
+                    # 例如，更新学生的状态或其他信息
+                    student.status = 1  # 或根据实际情况更新状态
+                    student.save()
+                # request.session['user'] = user_instance.id
+                # request.session['type'] = user_instance.type
+            return SysView.success(resl['message'])
         else:
-            return SysView.warn(resl['message'])
+            SysView.warn(resl['message'])
 
-        
-
+        return SysView.warn(resl['message'])
 
     # def login(request):
-    #
+
     #     userName = request.POST.get('userName')
     #     passWord = request.POST.get('passWord')
     #
@@ -842,7 +875,7 @@ class StudentsView(BaseView):
         )
 
         models.Students.objects.create(
-            id=request.POST.get('id'),
+            id=request.POST.get('id'),  #
             address=request.POST.get('address'),
             birthday=request.POST.get('birthday'),
             status=request.POST.get('status'),
