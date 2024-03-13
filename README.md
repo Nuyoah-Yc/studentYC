@@ -14,39 +14,37 @@
 
 ## 1. 项目预览
 
-![image-20240313122910563](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20240313122910563.png)
+![image-20240313122910563.png](https://bk.cyymzy.com/upload/image-20240313122910563.png)
 
 用户登陆页
 
-![image-20240313124355714](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20240313124355714.png)
+![image-20240313124355714.png](https://bk.cyymzy.com/upload/image-20240313124355714.png)
 
 系统首页
 
-![image-20240313124430131](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20240313124430131.png)
+![image-20240313124430131.png](https://bk.cyymzy.com/upload/image-20240313124430131.png)
 
 数据展示页面
 
 ## 2. 项目设计
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22426565/1647869756049-8e5a69b9-15c1-425d-89a5-7c81bdb3b65b.png?x-oss-process=image%2Fformat%2Cwebp)
+![image-20240313191543609.png](https://bk.cyymzy.com/upload/image-20240313191543609.png)
 
 系统功能结构图
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22426565/1647869793293-3f0c6d7b-89c4-493a-b827-0b1a1740393d.png?x-oss-process=image%2Fformat%2Cwebp%2Fresize%2Cw_1125%2Climit_0)
 
 
+![image-20240313192815021.png](https://bk.cyymzy.com/upload/image-20240313192815021.png)
 
 用户角色图
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/22426565/1647869777476-4d218947-7f99-4740-b449-240695c7583b.png?x-oss-process=image%2Fformat%2Cwebp%2Fresize%2Cw_1125%2Climit_0)
-
-
+![image .png](https://bk.cyymzy.com/upload/image%20.png)
 
 数据库ER图
 
 ## 3. 项目结构
 
-![image-20240313133547565](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20240313133547565.png)
+![image-20240313133547565.png](https://bk.cyymzy.com/upload/image-20240313133547565.png)
 
 
 
