@@ -124,6 +124,18 @@ python manage.py migrate
 
 
 
+## 在线体验
+
+访问https://jygl.cyymzy.com 可以看见预览效果
+
+管理员账号：老师的教务系统账号
+
+企业人员账号：admin，admin
+
+学生账号：学生的教务系统账号
+
+
+
 ## 问题相关
 
 有任何问题欢迎提Issue,或者将问题描述发送至我邮箱 `2403930241a@gmail.com`.我会尽快解答.推荐提交Issue方式.  
