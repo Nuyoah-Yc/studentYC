@@ -45,7 +45,7 @@ body{
 	top: 0;
 	bottom: 0;
 	width: 200px;
-	background-color: #333333;
+	background-color: #FFFFFF;
 }
 .fater-layout-body{
 	position: absolute;
@@ -81,9 +81,9 @@ body{
 	cursor: pointer;
 	font-size: 18px;
 	font-weight: bold;
-	color: #FFFFFF;
+	color: #589cfc;
 	text-align: center;
-	border-bottom: 1px solid #44484e;
+	border-bottom: 1px solid #FFFFFF;
 }
 .fater-user{
 	position: absolute;
@@ -117,7 +117,7 @@ body{
 .fater-menu-vertical{
 }
 .fater-menu-vertical *{
-	color: #FFFFFF;
+	color: #589cfc;
 }
 .fater-menu-vertical span{
 	margin-right: 8px;
@@ -130,7 +130,7 @@ body{
 	cursor: pointer;
 }
 .fater-menu-item:hover{
-	background-color: #626060;
+	background-color: #eeeeee;
 }
 
 /* 引用条样式 */
@@ -203,7 +203,7 @@ body{
 	color: #FFFFFF;
 }
 .fater-btn-normal{
-	color: #333333;
+	color: #ffffff;
 	background-color: #FFFFFF;
 	border-color: #CCCCCC;
 }
