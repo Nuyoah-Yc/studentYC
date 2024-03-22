@@ -1,28 +1,22 @@
-# 使用官方 Python 3.11 运行时作为父镜像
-FROM python:3.11-rc-slim
+# 使用Python 3.12官方镜像作为基础镜像
+FROM python:3.12
 
-# 设置环境变量
-ENV PYTHONDONTWRITEBYTECODE 1
+# 设置环境变量，确保Python输出直接打印到控制台，不会被缓存
 ENV PYTHONUNBUFFERED 1
 
-# 设置工作目录
+# 在容器内部创建/app目录，并将其设置为工作目录
 WORKDIR /app
 
-# 安装系统依赖，您可能需要的其他依赖
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends gcc libpq-dev && \
-    rm -rf /var/lib/apt/lists/*
-
-# 将项目依赖复制到容器中
+# 将项目的requirements.txt文件复制到容器中
 COPY requirements.txt /app/
 
-# 安装项目依赖
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+# 使用pip安装requirements.txt中列出的所有依赖
+RUN pip install --no-cache-dir -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --default-timeout=120
 
-# 将项目代码复制到容器中
+# 将当前目录下的所有文件复制到容器的/app目录下
 COPY . /app/
 
+# 暴露容器的8000端口
+EXPOSE 8000
 
-# 指定启动命令
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

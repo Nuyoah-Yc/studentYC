@@ -130,7 +130,7 @@ class SysView(BaseView):
                 request.session['type'] = user.type
                 return SysView.success()
         url = 'https://api.cyymzy.com/items/login'
-        rsp = requests.post(url, data={'username': userName, 'password': passWord})
+        rsp = requests.post(url, data=json.dumps({'username': userName, 'password': passWord}))
         resl = rsp.json()
         if resl['message'] == '登录成功':
             gender = resl['gender']
